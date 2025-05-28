@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MacLaren| Services</title>
+  <link rel="stylesheet" href="style.css" />
+
+    
+</head>
+<body>
+  <header class="header">
+    <div class="container header-flex">
+      <div class="nav-left">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav-right">
+      <img src="logo.jpg" alt="Mclaren Logo" class="logo" />
+      </div>
+    </div>
+  </header>
+
+  <section>
+  <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">MacLaren Services</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    
+    <div onclick="showServiceDetail('Engine Tuning')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Engine Tuning</h3>
+      <p style="font-size: 16px;">Performance tuning for maximum power output and efficiency.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Suspension Upgrades')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Suspension Upgrades</h3>
+      <p style="font-size: 16px;">Customized suspension systems for improved handling and comfort.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Software Updates')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Software Updates</h3>
+      <p style="font-size: 16px;">Latest firmware and OS updates for onboard systems and navigation.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Tire Services')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Tire Services</h3>
+      <p style="font-size: 16px;">Precision tire mounting, balancing, and alignment.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Paint Protection')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Paint Protection</h3>
+      <p style="font-size: 16px;">Protective coatings and wraps to maintain factory-fresh paintwork.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Interior Customization')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Interior Customization</h3>
+      <p style="font-size: 16px;">Premium upholstery, lighting, and tech upgrades for the cabin.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Track Prep')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Track Preparation</h3>
+      <p style="font-size: 16px;">Race-ready tuning, safety checks, and modifications for track days.</p>
+    </div>
+
+    <div onclick="showServiceDetail('Remote Diagnostics')" style="width: 250px; border: 1px solid #ccc; padding: 16px; text-align: center;">
+      <h3 style="font-size: 22px;">Remote Diagnostics</h3>
+      <p style="font-size: 16px;">Real-time system analysis and error reporting from your mobile device.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <div id="serviceModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Service Title</h3>
+      <p id="modalDescription">More information about the selected service will appear here.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+    <p class="footer-text">© 2025 Maclaren. Love for comfort.</p>
+    </div>
+  </footer>
+
+  <script>
+    function showServiceDetail(serviceName) {
+      const modal = document.getElementById("serviceModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+
+      const serviceDetails = {
+        "Maintenance": "Our certified BMW service technicians will ensure your vehicle stays in top condition with regular maintenance plans.",
+        "Repairs": "From minor fixes to major overhauls, our BMW service centers offer professional repairs with genuine parts.",
+        "Diagnostics": "Cutting-edge diagnostics technology helps detect issues early and ensure smooth performance.",
+        "Detailing": "We offer interior and exterior detailing using BMW-approved materials and techniques for a pristine finish."
+      };
+
+      modalTitle.textContent = serviceName;
+      modalDescription.textContent = serviceDetails[serviceName];
+      modal.classList.remove("hidden");
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("serviceModal");
+      modal.classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
